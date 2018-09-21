@@ -1,12 +1,12 @@
 set /p x="BBeduTe umia papki: "
-echo %x%
-@pause
-Set Papka=D:\!x! 
-if exist !Papka! (
+@Echo Off
+
+Set Papka=D:\%x%
+
+If not Exist "%Papka%\*.*" (
 MD D:\%x%
 MD D:\%x%\css
 MD D:\%x%\js
-@echo off
 echo Create style.css
 echo. html {>D:\%x%\css\style.css
 echo. >>D:\%x%\css\style.css
@@ -40,9 +40,8 @@ echo.   ^<^/div^>^ >>D:\%x%\index.html
 echo.   ^<^script src="js/app.js"^>^^<^/script^>^ >>D:\%x%\index.html
 echo. ^<^/body^>^ >>D:\%x%\index.html
 echo. ^<^/html^>^ >>D:\%x%\index.html
-echo Project successfully created!
-@pause
-) else (
+Echo The project created!
+) Else (
 Echo The project is already created!
-@pause
 )
+pause
