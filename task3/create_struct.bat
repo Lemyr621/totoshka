@@ -4,7 +4,7 @@ set /p x="BBeduTe umia papki: "
 Set Papka=D:\%x%
 
 If not Exist "%Papka%\*.*" (
-MD D:\%x%
+MD %x%
 MD D:\%x%\css
 MD D:\%x%\js
 echo Create style.css
