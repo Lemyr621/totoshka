@@ -1,4 +1,4 @@
-set /p x="BBeduTe umia papki: "
+set /p x="enter the name of the folder: "
 @Echo Off
 
 Set string1=html{
@@ -16,7 +16,7 @@ Set "string12="
 Set string13=.content h1 {
 Set "string14="
 Set string15=}
-Set Papka=D:\%x%
+Set Papka=%x%
 Set string=html{
 
 If not Exist "%Papka%\*.*" (
