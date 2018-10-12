@@ -38,13 +38,15 @@ function subscribeGroup(id) {
  * Функция отписки от группы
  * @param group
  */
-function unsubscribeGroup(group) {
-  if (myGroups.indexOf(group) != -1) {
+function unsubscribeGroup(id) {
+  if (myGroups.indexOf(id) != -1) {
     for (let key of groupList.values()) {
-      if (group==key.groupName) {
+      if (id==key.id) {
         key.subscribers=key.subscribers-1;
+        group=key.groupName;
       }
     }
+    myGroups.splice(myGroups.indexOf(id), 1);
     myGroups.splice(myGroups.indexOf(group), 1);
     console.log("you are just unsubscribe for " + group);
   } else
