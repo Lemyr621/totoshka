@@ -2,11 +2,18 @@ const myGroups = []; // массив для хранения подписок н
 
 const groupList = [{
     groupName: "Habrahabr",
-    subscribers:0
+    subscribers:0,
+    id:1
   },
   {
     groupName: "Web2018",
-    subscribers:0
+    subscribers:0,
+    id:2
+  },
+  {
+    groupName: "Web2018",
+    subscribers:0,
+    id:3
   },
 ];
 
@@ -14,11 +21,12 @@ const groupList = [{
  * Функция подписки на группы
  * @param group
  */
-function subscribeGroup(group) {
+function subscribeGroup(id) {
   for (let key of groupList.values()) {
-    if (key.groupName == group && myGroups.indexOf(group) == -1) {
-      key.subscribers=1;
-      myGroups.push(group);
+    if (key.id == id) {
+      key.subscribers=key.subscribers+1;
+      group=key.groupName
+      myGroups.push(group,id);
       console.log("you are just subscribe on " + group);
       return 0;
     }
@@ -34,7 +42,7 @@ function unsubscribeGroup(group) {
   if (myGroups.indexOf(group) != -1) {
     for (let key of groupList.values()) {
       if (group==key.groupName) {
-        key.subscribers=0;
+        key.subscribers=key.subscribers-1;
       }
     }
     myGroups.splice(myGroups.indexOf(group), 1);
