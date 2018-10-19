@@ -22,15 +22,27 @@ const groupList = [{
  * @param group
  */
 function subscribeGroup(id) {
+  group="this";
+  id_chek=0;
+  if(myGroups.indexOf(id) == -1){
   for (let key of groupList.values()) {
     if (key.id == id) {
       key.subscribers=key.subscribers+1;
       group=key.groupName
       myGroups.push(group,id);
       console.log("you are just subscribe on " + group);
+      id_chek=1;
       return 0;
     }
   }
+}
+else {
+  console.log("you have already subscribed to " + group + " group");
+  return 0;
+}
+  if (id_chek == 0){
+  console.log("invalid index specified");
+}
   console.log("can't subscribe on " + group + " group");
 }
 
@@ -39,6 +51,7 @@ function subscribeGroup(id) {
  * @param group
  */
 function unsubscribeGroup(id) {
+  group="this";
   if (myGroups.indexOf(id) != -1) {
     for (let key of groupList.values()) {
       if (id==key.id) {
