@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.chat {
+  padding-left: 400px;
+  padding-right: 400px;
+}
+
+.messagelist {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.message_content{
+  padding: 10px;
+  border-radius: 10px;
+  border: 3px solid #3ec296;
+  background-color: #43e08d;
+  max-width: 70%;
+}
+
+.message_content_user2{
+  padding: 10px;
+  border-radius: 10px;
+  border: 3px solid #3ec296;
+  background-color: #43e0ce;
+  max-width: 70%;
+}
+
+.message_author{
+  font-family:"Lucida Console", Monaco, monospace;
+}
+.message_text {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.message_user2 {
+  justify-content: flex-end;
+}
+
+#input_panel{
+    top: auto 0;
+    height: 50px;
+    background:#EEE;
+    position: fixed;
+    bottom: :0px;
+    left:400px;
+    right:400px;
+    border-radius: 10px;
+}
+
+#input_panel textarea{
+    position:absolute;
+    width:70%;
+    top:10px;
+    bottom:10px;
+    right:120px;
+    resize: none;
+}
+
+#input_panel input[type=submit]{
+    position:absolute;
+    top:10px;
+    bottom:10px;
+    right:10px;
+    width:100px;
+    border-radius: 10px;
+    background-color: #44b3eb;
+}
