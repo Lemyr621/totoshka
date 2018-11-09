@@ -1,0 +1,43 @@
+.scene {
+  text-align: center;
+  position: absolute;
+  height: 1%;
+  width: 60%;
+  top: 5%;
+  left: 20%;
+  background-color: #333;
+}
+.Hall {
+  text-align: center;
+  position: absolute;
+  top: 25%;
+  left: 35%;
+}
+.seat {
+  height: 50px;
+  width: 50px;
+  margin-left: 2px;
+  background-color: #999999;
+  display: inline-block;
+  cursor: pointer;
+}
+.SpaceBetween {
+  height: 3px;
+  width: 100%;
+  display: block;
+}
+.bay {
+  background-color: red;
+}
+@media (max-width:435 px) {
+  .seat{
+    width: 15px;
+    height: : 15px;
+  }
+}
+@media (max-width:815px) {
+  .seat{
+    width: 25px;
+    height: : 25px;
+  }
+}
