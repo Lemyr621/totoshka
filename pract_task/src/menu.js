@@ -21,7 +21,7 @@ class Menu {
     titleElem.className = "title";
     titleElem.textContent = this.options.title;
 
-    this.elem.onmousedown = function () {
+    this.elem.onmousedown = function() {
       return false;
     };
 
