@@ -36,7 +36,7 @@ class Menu {
     let items = this.options.items || [];
     let list = document.createElement("ul");
     items.forEach(function(item) {
-      let li = document.createElement('li');
+      let li = document.createElement("li");
       li.textContent = item;
       list.appendChild(li);
     });
@@ -57,10 +57,9 @@ class Menu {
   toggle() {
     this.elem.classList.contains("open") ? this.close() : this.open();
   }
-
 }
 
-const menu = new Menu({
+var menu = new Menu({
   title: "Сладости",
   items: [
     "Торт",
@@ -70,5 +69,35 @@ const menu = new Menu({
     "Мороженое"
   ]
 });
+
+function clone(){
+  var menu1 = new Menu({
+    title: "Сладости",
+    items: [
+      "Торт",
+      "Пончик",
+      "Пирожное",
+      "Шоколадка",
+      "Мороженое"
+    ]
+  });
+  var btn = document.createElement("button");
+var textInBtn = document.createTextNode("menu1.toggle()");
+btn.appendChild(textInBtn);
+btn.setAttribute("onclick","menu1.toggle()")
+  document.body.appendChild(btn);
+btn = document.createElement("button");
+textInBtn = document.createTextNode("menu1.open()");
+btn.appendChild(textInBtn);
+btn.setAttribute("onclick","menu1.open()")
+  document.body.appendChild(btn);
+btn = document.createElement("button");
+textInBtn = document.createTextNode("menu1.close()");
+btn.appendChild(textInBtn);
+btn.setAttribute("onclick","menu1.close()")
+  document.body.appendChild(btn);
+
+  document.body.appendChild(menu1.getElem());
+}
 
 document.body.appendChild(menu.getElem());
