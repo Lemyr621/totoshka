@@ -1,17 +1,10 @@
 class Menu {
 
-<<<<<<< HEAD
   constructor(options,btnToggle,btnopen,btnClose) {
     this.btnTog=btnToggle;
     this.btnOp=btnopen;
     this.btnCl=btnClose;
     this.elem="";
-=======
-  constructor(options) {
-    this.elem;
->>>>>>> 49658125417d8d77eb1ca95f154540b3215f0e34
-    this.options = options;
-  }
 
   getElem() {
     if (!this.elem) {
@@ -38,7 +31,6 @@ class Menu {
         this.toggle();
       }
     }
-<<<<<<< HEAD
     this.btnTog.onclick = (event) => {
         this.toggle();
     }
@@ -48,8 +40,6 @@ class Menu {
     this.btnCl.onclick = (event) => {
         this.close();
     }
-=======
->>>>>>> 49658125417d8d77eb1ca95f154540b3215f0e34
   }
 
   renderItems() {
@@ -78,7 +68,7 @@ class Menu {
     this.elem.classList.contains("open") ? this.close() : this.open();
   }
 }
-<<<<<<< HEAD
+
 var btnToggle = document.createElement("button");
 var textInBtn = document.createTextNode("menu1.toggle()");
 btnToggle.appendChild(textInBtn);
@@ -91,9 +81,6 @@ btnClose = document.createElement("button");
 textInBtn = document.createTextNode("menu1.close()");
 btnClose.appendChild(textInBtn);
 document.body.appendChild(btnClose);
-=======
-
->>>>>>> 49658125417d8d77eb1ca95f154540b3215f0e34
 var menu = new Menu({
   title: "Сладости",
   items: [
@@ -103,7 +90,7 @@ var menu = new Menu({
     "Шоколадка",
     "Мороженое"
   ]
-<<<<<<< HEAD
+
 },btnToggle,btnOpen,btnClose);
 
 function clone(){
@@ -119,11 +106,11 @@ btnClose = document.createElement("button");
 textInBtn = document.createTextNode("menu1.close()");
 btnClose.appendChild(textInBtn);
 document.body.appendChild(btnClose);
-=======
+
 });
 
 function clone(){
->>>>>>> 49658125417d8d77eb1ca95f154540b3215f0e34
+
   var menu1 = new Menu({
     title: "Сладости",
     items: [
@@ -133,11 +120,9 @@ function clone(){
       "Шоколадка",
       "Мороженое"
     ]
-<<<<<<< HEAD
   },btnToggle,btnOpen,btnClose);
   document.body.appendChild(menu1.getElem());
 }
-=======
   });
   var btn = document.createElement("button");
 var textInBtn = document.createTextNode("menu1.toggle()");
@@ -157,6 +142,4 @@ btn.setAttribute("onclick","menu1.close()")
 
   document.body.appendChild(menu1.getElem());
 }
-
->>>>>>> 49658125417d8d77eb1ca95f154540b3215f0e34
 document.body.appendChild(menu.getElem());
