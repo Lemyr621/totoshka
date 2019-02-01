@@ -29,7 +29,7 @@
 .bay {
   background-color: red;
 }
-@media (max-width:435 px) {
+@media (max-width:434 px) {
   .seat{
     width: 15px;
     height: : 15px;

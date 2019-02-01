@@ -1,0 +1,42 @@
+.hat{
+  position: relative;
+ z-index: 1;
+ background: url(../images/background.png) center center no-repeat;
+ background-size: cover;
+ padding: 250px 0 200px
+}
+.inscription{
+  height: 200px;
+}
+
+.content{
+  width: 1290px;
+  position: absolute;
+  left: 50%;
+  margin-left: -645px;
+}
+.place_column{
+  width: 400px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 33px;
+  float: left;
+  top: 10px;
+}
+.place_image{
+}
+.place_image img {
+  width: 400px;
+  height: 400px;
+}
+.place_name {
+  text-align: center;
+  width: 400px;
+}
+.place_name a{
+text-decoration: none;
+font-family: 'Oswald', sans-serif;
+font-size: 30px;
+font-weight: 400;
+color: #181818;
+}
