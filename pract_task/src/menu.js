@@ -70,39 +70,17 @@ class Menu {
     this.elem.classList.contains("open") ? this.close() : this.open();
   }
 }
-var btnToggle = document.createElement("button");
-var textInBtn = document.createTextNode("menu1.toggle()");
-btnToggle.appendChild(textInBtn);
-document.body.appendChild(btnToggle);
-btnOpen = document.createElement("button");
-textInBtn = document.createTextNode("menu1.open()");
-btnOpen.appendChild(textInBtn);
-document.body.appendChild(btnOpen);
-btnClose = document.createElement("button");
-textInBtn = document.createTextNode("menu1.close()");
-btnClose.appendChild(textInBtn);
-document.body.appendChild(btnClose);
-var menu = new Menu({
-  title: "Сладости",
-  items: [
-    "Торт",
-    "Пончик",
-    "Пирожное",
-    "Шоколадка",
-    "Мороженое"
-  ]
-}, btnToggle, btnOpen, btnClose);
 
 function clone() {
-  var btnToggle = document.createElement("button");
-  var textInBtn = document.createTextNode("menu1.toggle()");
+  let btnToggle = document.createElement("button");
+  let textInBtn = document.createTextNode("menu1.toggle()");
   btnToggle.appendChild(textInBtn);
   document.body.appendChild(btnToggle);
-  btnOpen = document.createElement("button");
+  let btnOpen = document.createElement("button");
   textInBtn = document.createTextNode("menu1.open()");
   btnOpen.appendChild(textInBtn);
   document.body.appendChild(btnOpen);
-  btnClose = document.createElement("button");
+  let btnClose = document.createElement("button");
   textInBtn = document.createTextNode("menu1.close()");
   btnClose.appendChild(textInBtn);
   document.body.appendChild(btnClose);
@@ -118,4 +96,5 @@ function clone() {
   }, btnToggle, btnOpen, btnClose);
   document.body.appendChild(menu1.getElem());
 }
+clone();
 document.body.appendChild(menu.getElem());
