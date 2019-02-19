@@ -1,14 +1,24 @@
 .hat{
   position: relative;
- z-index: 1;
  background: url(../images/background.png) center center no-repeat;
  background-size: cover;
  padding: 250px 0 200px
 }
-.inscription{
-  height: 200px;
+.hat p{
+  color: #ffffff;
+  font-family: ‘Lato’, sans-serif;
+  font-size: 38px;
+  text-align: center;
 }
-
+.inscription{
+  height: 100px;
+}
+.inscription p{
+text-align: center;
+font-family: 'Oswald', sans-serif;
+font-size: 48px;
+color: #181818;
+}
 .content{
   width: 1290px;
   position: absolute;
@@ -32,6 +42,7 @@
 .place_name {
   text-align: center;
   width: 400px;
+  height: 125px;
 }
 .place_name a{
 text-decoration: none;
@@ -39,4 +50,15 @@ font-family: 'Oswald', sans-serif;
 font-size: 30px;
 font-weight: 400;
 color: #181818;
+}
+.place_name p{
+text-decoration: none;
+font-family: 'Oswald', sans-serif;
+font-size: 16px;
+font-weight: 400;
+color: #181818;
+}
+.country_banner img{
+  width: 400px;
+  height: 500px;
 }

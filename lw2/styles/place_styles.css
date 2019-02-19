@@ -1,0 +1,65 @@
+body {
+  position: relative;
+  background: url(../images/cermatt/cermatt_pagebg.jpg) no-repeat;
+  background-size: cover;
+}
+.white{
+  margin-left: 7%;
+  margin-right: 7%;
+  width: 86%;
+  height:100%;
+  background: white;
+}
+h1 {
+  color: black;
+  font-family: «Great Vibes», cursive;
+  font-size: 100px;
+  line-height: 160px;
+  font-weight: normal;
+  margin-bottom: 0px;
+  margin-top: 40px;
+  text-align: center;
+  text-shadow: 0 1px 1px #fff;
+}
+.description{
+  padding: 5px;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  height: 800px;
+  margin-bottom: 150px;
+}
+.description p {
+    font-size: 29px;
+    font-family: «Libre Baskerville», serif;
+    line-height: 45px;
+    text-align: center;
+    text-shadow: 0 1px 1px #fff;
+    padding-top: 20px;
+}
+.description .image{
+  width: 30%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 33px;
+  float: left;
+  top: 10px;
+}
+.description .image img{
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+}
+.map_and_comment{
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 100px;
+  width: 90%;
+  background: #CFCFCF;
+}
+.map{
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 50px;
+  width: 45%;
+}
