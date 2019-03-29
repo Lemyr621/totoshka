@@ -3,20 +3,17 @@ var odd = function(number) {
 }
 
 var even = function(number) {
-  return number % 2 === 0;
+  if(number!=0){  return number % 2 === 0;}
 }
 
-// TODO: filter for elimination 0 value
 var eliminateZero = function(number) {
   return number!=0;
-  // your code
 }
 
-// TODO: get every second element in sequence
-var counter=1;
+var everSecondTimer=0;
+
 var everySecond = function(number) {
-  return even(counter++);
-  // your code
+  return even(++everSecondTimer);
 }
 
 function filterArray(arr, filter) {
@@ -24,8 +21,6 @@ function filterArray(arr, filter) {
   for (i = 0; i < arr.length; i++) {
     if (filter(arr[i])) {
       resultArray.push(arr[i]);
-      // TODO: add filtered element in resultArray
-      // your code
     }
   }
   return resultArray;

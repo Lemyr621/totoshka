@@ -1,6 +1,6 @@
-const arr = [];
 var numders=[];
 function pulloutArray(numbers){
+  const arr = [];
   for(i=0;i<numbers.length;i++){
     if (Number.isInteger(numbers[i]))
     arr.push(numbers[i]);
