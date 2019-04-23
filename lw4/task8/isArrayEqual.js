@@ -1,17 +1,13 @@
 function isArrayEqual(array1, array2) {
-  if (!Array.isArray(array1) || !Array.isArray(array2)) {
-    return false;
-  } else if (array1.length != array2.length) {
+  if ((!Array.isArray(array1) || !Array.isArray(array2)) || (array1.length != array2.length)) {
     return false;
   }
 
   for (var i = 0; i < array1.length; i++) {
-    if (Array.isArray(array1[i]) || Array.isArray(array2[i])) {
+    if((Array.isArray(array1[i]) || Array.isArray(array2[i])) || (array1[i] !== array2[i])) {
       if (!isArrayEqual(array1[i], array2[i])) {
         return false;
       }
-    } else if (array1[i] !== array2[i]) {
-      return false;
     }
   }
 

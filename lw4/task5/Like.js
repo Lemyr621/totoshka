@@ -1,18 +1,19 @@
 var like = {
-  counter: 0}
-  like.Like=function() {
+  counter: 0
+}
+like.funcLike = function() {
     this.counter++;
   },
-  like.DisLike=function() {
+  like.funcDislike = function() {
     this.counter--;
   }
 console.log(like.counter);
-like.Like();
-like.Like();
-like.Like();
+like.funcLike();
+like.funcLike();
+like.funcLike();
 console.log(like.counter);
-like.DisLike();
-like.DisLike();
-like.DisLike();
-like.DisLike();
+like.funcDislike();
+like.funcDislike();
+like.funcDislike();
+like.funcDislike();
 console.log(like.counter);
