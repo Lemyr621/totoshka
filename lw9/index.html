@@ -23,37 +23,72 @@
 
 <body>
   <script>
-    function SMS(phoneNomber, usercoude) {
-      if (isNaN(phoneNomber)) {
-        return false;
-      }
-      if (phoneNomber == "") {
-        return false;
-      }
-      if (phoneNomber.length != 10) {
-        return false;
-      }
-      if (RecoveryPassword(usercoude) == true) {
-        return true;
+    'use strict';
+
+    class SMS {
+      checkNomber(phoneNomber) {
+        if (isNaN(phoneNomber)) {
+          return false;
+        }
+        if (phoneNomber == "") {
+          return false;
+        }
+        if (phoneNomber.length != 10) {
+          return false;
+        }
+          return true;
       }
     }
 
-    function Email(mail, usercoude) {
-      var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-      if (reg.test(mail) == false) {
-        return false;
-      }
-      if (RecoveryPassword(usercoude) == true) {
-        return true;
-      }
-    }
+      class Email {
+        checkMail(mail) {
+          var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+          if (reg.test(this.mail) == false) {
+            return false;
+          }
+            return true;
 
-    function RecoveryPassword(usercoude) {
-      var code = "1111";
-      if (code == usercoude) {
-        return true;
+        }
+
       }
-    }
+
+      class RecoveryPassword {
+
+        sendCode(inputRecipient) {
+          if (isNaN(inputRecipient)) {
+            var email = new Email();
+            if (email.checkMail(inputRecipient) == true) {
+              var userCode = 0 + Math.random() * (999 + 1 - 0);
+              userCode = Math.floor(userCode);
+            }
+          } else {
+            var sms = new SMS();
+            if (sms.checkNomber(inputRecipient) == true) {
+              var userCode = 0 + Math.random() * (999 + 1 - 0);
+              userCode = Math.floor(userCode);
+            }
+          }
+          return userCode;
+        }
+        checkCode(userCode,inputRecipient) {
+          var code = recovery.sendCode(inputRecipient);
+          if (code == userCode) {
+            return true;
+          }
+        }
+      }
+
+      function Send(inputRecipient) {
+        var recovery = new RecoveryPassword();
+        var result = recovery.sendCode(inputRecipient);
+        return result;
+      }
+
+      function check(userCode) {
+        var recovery = new RecoveryPassword();
+        var result = recovery.checkCode(userCode);
+        return result;
+      }
   </script>
 
   <!-- в этом скрипте находятся спеки -->
