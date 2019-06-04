@@ -27,7 +27,7 @@
 
     class SMS {
       constructor(recipient) {
-         this.phoneNumber=recipient;
+        this.phoneNumber = recipient;
       }
       checkNumber() {
         if (isNaN(this.phoneNumber) || this.phoneNumber == "" || this.phoneNumber.length != 10) {
@@ -35,11 +35,14 @@
         }
         return true;
       }
+      send(code) {
+        console.log(this.phoneNumber + "|" + code)
+      }
     }
 
     class Email {
       constructor(recipient) {
-         this.mail=recipient;
+        this.mail = recipient;
       }
       checkMail() {
         var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
@@ -48,47 +51,41 @@
         }
         return true;
       }
+      send(code) {
+        console.log(this.mail + "|" + code)
+      }
     }
 
     class RecoveryPassword {
 
-      constructor(recipient) {
-         this.code = "";
-         this.recipient = recipient;
-         this.email = new Email(recipient);
-         this.sms = new SMS(recipient);
+      constructor(type, recipient) {
+        this.typeOfRegistration = type;
+        this.code = 0 + Math.random() * (999 + 1 - 0);
+        this.code = Math.floor(this.code);
+        this.recipient = recipient;
+        this.email = new Email(recipient);
+        this.sms = new SMS(recipient);
       }
       sendCode() {
-        if (isNaN(this.recipient)) {
-          if (this.email.checkMail()) {
-            var userCode = 0 + Math.random() * (999 + 1 - 0);
-            userCode = Math.floor(userCode);
+        if (this.typeOfRegistration === "sms") {
+          if (this.sms.checkNumber()){
+            this.sms.send(this.code);
+            return this.code;
           }
-        } else {
-          if (this.sms.checkNumber()) {
-            var userCode = 0 + Math.random() * (999 + 1 - 0);
-            userCode = Math.floor(userCode);
+        } else return ""
+         if (this.typeOfRegistration === "email") {
+          if (this.email.checkMail()){
+            this.email.send(this.code);
+            return this.code;
           }
-        }
-        this.code = userCode;
-        send(this.recipient,this.code);
-        return userCode;
+        } else return ""
       }
       checkCode(userCode) {
-        if (this.code == userCode) {
+        if (this.code === userCode) {
           return true;
         }
         return false;
       }
-    }
-
-    var recovery = new RecoveryPassword("1234567891");
-
-    var userCode = recovery.sendCode();
-    var result = recovery.checkCode("111");
-
-    function send(recipient,code){
-      console.log(recipient+"|"+code)
     }
   </script>
 
