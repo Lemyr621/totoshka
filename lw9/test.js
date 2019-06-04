@@ -1,22 +1,41 @@
-describe("Проверка номера/адреса", function() {
+describe("Проверка номера", function() {
 
   function makeTest(x) {
-    it("при указании номера/адреса" + x , function() {
-      assert.equal(Send(x), "111");
+    it("при указании номера " + x.phoneNumber , function() {
+      assert.equal(x.checkNumber(),true);
     });
   }
-
-    var check = "1234567891"
-    makeTest(check);
+    var sms = new SMS("1234567891");
+    makeTest(sms);
 });
 
-describe("Проверка кода", function() {
+describe("Проверка почты", function() {
 
   function makeTest(x) {
-    it("при указании кода " + x, function() {
-      assert.equal(check(x), true);
+    it("при указании адреса " + x.mail , function() {
+      assert.equal(x.checkMail(),true);
     });
   }
-    var code = "111"
-    makeTest(code);
+    var email = new Email("mlo@mlo.mlo");
+    makeTest(email);
+});
+
+describe("Проверка создания кода", function() {
+
+  function makeTest() {
+    it("создание кода", function() {
+      assert.equal(userCode, recovery.code);
+    });
+  }
+  makeTest();
+});
+
+describe("Проверка введёного кода", function() {
+
+  function makeTest() {
+    it("создание кода", function() {
+      assert.equal(result, true);
+    });
+  }
+  makeTest();
 });
