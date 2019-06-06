@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Registration</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+  <div class="page">
+    <header class="header"></header>
+    <main class="content">
+      <form class="registration">
+        <p class="registration__text-header">Registration</p>
+        <p class="registration__text-email">E-mail:<input id="mail_field" class="registration__login registration__login_active" ></p>
+          <div class="password-block">
+            <p class="password-block__text-password">Пароль:<input  class="password-block__password password-block__password_active" type="password"></p>
+              <p class="password-block__text-password-confirmation">Подтвердите пароль:<input id="password_field" class="password-block__password password-block__password-repeat password-block__password_active" type="password"></p>
+          </div>
+          <input class="registration__check-confirmation" type="checkbox">
+          <label>Я согласен с условиями</label>
+          <p><input class="registration__button registration__button_active" type="submit" value="Registration"></p>
+      </form>
+    </main>
+</body>
+<footer class="footer">
+</footer>
+<script src="scripts/script.js"></script>
+
+</html>
