@@ -1,11 +1,11 @@
 @font-face {
-font-family: 'corbel';
-src: url('../fonts/corbel.ttf');
+  font-family: corbel;
+  src: url(fonts/corbel.ttf);
 }
 
 @font-face {
-  font-family:'arial';
-  src: url('../fonts/arial.ttf');
+  font-family: arial;
+  src: url(fonts/arial.ttf);
 }
 
 body {
@@ -17,10 +17,6 @@ body {
 
 main {
   background: #292c2f;
-  margin: 0;
-}
-
-.page {
   margin: 0;
 }
 
@@ -179,14 +175,15 @@ main {
   height: 30px;
   margin-left: 10px;
   padding-left: 4px;
-  width: 400px;}
+  width: 400px;
+}
 
 .password-block__password_active:focus {
   border-bottom: 3px solid #2483c6;
   outline: 0;
 }
 
-.footerr {
+.footer {
   background: #1e2125;
   bottom: 0;
   border-width: 1px;
