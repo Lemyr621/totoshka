@@ -1,31 +1,36 @@
-.hat{
+.hat {
   position: relative;
- background: url(../images/background.png) center center no-repeat;
- background-size: cover;
- padding: 250px 0 200px
+  background: url(../images/background.png) center center no-repeat;
+  background-size: cover;
+  padding: 250px 0 200px
 }
-.hat p{
+
+.hat p {
   color: #ffffff;
   font-family: ‘Lato’, sans-serif;
   font-size: 38px;
   text-align: center;
 }
-.inscription{
+
+.inscription {
   height: 100px;
 }
-.inscription p{
-text-align: center;
-font-family: 'Oswald', sans-serif;
-font-size: 48px;
-color: #181818;
+
+.inscription p {
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 48px;
+  color: #181818;
 }
-.content{
+
+.content {
   width: 1290px;
   position: absolute;
   left: 50%;
   margin-left: -645px;
 }
-.place_column{
+
+.place_column {
   width: 400px;
   padding-left: 15px;
   padding-right: 15px;
@@ -33,32 +38,35 @@ color: #181818;
   float: left;
   top: 10px;
 }
-.place_image{
-}
+
 .place_image img {
   width: 400px;
   height: 400px;
 }
+
 .place_name {
   text-align: center;
   width: 400px;
   height: 125px;
 }
-.place_name a{
-text-decoration: none;
-font-family: 'Oswald', sans-serif;
-font-size: 30px;
-font-weight: 400;
-color: #181818;
+
+.place_name a {
+  text-decoration: none;
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  color: #181818;
 }
-.place_name p{
-text-decoration: none;
-font-family: 'Oswald', sans-serif;
-font-size: 16px;
-font-weight: 400;
-color: #181818;
+
+.place_name p {
+  text-decoration: none;
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #181818;
 }
-.country_banner img{
+
+.country_banner img {
   width: 400px;
   height: 500px;
 }
