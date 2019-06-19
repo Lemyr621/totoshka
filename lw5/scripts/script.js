@@ -7,12 +7,11 @@ function checkEmail(str) {
   }
 }
 mail_field.onblur = function() {
-    if (!checkEmail(this.value)){
-      mailAddErrMesage();
-    }
-      else {
-          document.getElementsByClassName('registration__login')[0].style.backgroundColor = 'green';
-      }
+  if (!checkEmail(this.value)) {
+    mailAddErrMesage();
+  } else {
+    document.getElementsByClassName('registration__login')[0].style.backgroundColor = 'green';
+  }
 }
 mail_field.onfocus = function() {
   document.getElementsByClassName('registration__login')[0].style.backgroundColor = '#484d56';
@@ -70,9 +69,9 @@ document.getElementsByClassName('registration')[0].onsubmit = function() {
   return registration();
 };
 
-function mailAddErrMesage(){
-    var bloop = document.getElementById('mail_alert_id')
-    if(bloop===null){
+function mailAddErrMesage() {
+  var bloop = document.getElementById('mail_alert_id')
+  if (bloop === null) {
     var div = document.createElement('div');
     div.className = "alert";
     div.id = "mail_alert_id"
@@ -81,15 +80,16 @@ function mailAddErrMesage(){
     document.getElementsByClassName('registration__login')[0].style.backgroundColor = 'red';
   }
 }
-function passwordAddErrMesage(){
+
+function passwordAddErrMesage() {
   var bloop = document.getElementById('password_alert_id')
-  if(bloop===null){
-var div = document.createElement('div');
-div.className = "alert";
-div.id = "password_alert_id"
-div.innerHTML = "passwords do not match or are less than 6 characters long";
-password_field.parentNode.insertBefore(div, password_field.nextSibling);
-document.getElementsByClassName('password-block__password')[0].style.backgroundColor = 'red';
-document.getElementsByClassName('password-block__password-repeat')[0].style.backgroundColor = 'red';
-}
+  if (bloop === null) {
+    var div = document.createElement('div');
+    div.className = "alert";
+    div.id = "password_alert_id"
+    div.innerHTML = "passwords do not match or are less than 6 characters long";
+    password_field.parentNode.insertBefore(div, password_field.nextSibling);
+    document.getElementsByClassName('password-block__password')[0].style.backgroundColor = 'red';
+    document.getElementsByClassName('password-block__password-repeat')[0].style.backgroundColor = 'red';
+  }
 }
