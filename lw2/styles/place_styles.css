@@ -63,11 +63,36 @@ h1 {
   margin-bottom: 100px;
   width: 90%;
   background: #CFCFCF;
+  height: 500px;
 }
 
 .map {
+  float: left;
   padding-top: 50px;
   padding-bottom: 50px;
   padding-left: 50px;
-  width: 45%;
+  width: 42%;
+}
+
+.comments {
+  background: white;
+  margin-top: 5%;
+  margin-right: 5%;
+  float: right;
+  width: 42%;
+}
+
+.nick {
+  font-size: 20;
+}
+
+.comment {
+  font-style: italic;
+}
+
+.input_comments {
+  float: right;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  width: 42%;
 }
