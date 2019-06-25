@@ -16,20 +16,35 @@
         растений.</p>
       <div class="image">
         <img src="../images/okinava/okinava1.jpg" alt="">
-</div>
-        <div class="image">
-          <img src="../images/okinava/okinava2.jpg" alt="">
-</div>
-          <div class="image">
-            <img src="../images/okinava/okinava3.jpg" alt="">
-</div>
-          </div>
-          <div class="map_and_comment">
-            <div class="map">
-              <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A689998c933b7d585ab8614c9daf863af96ca0b74ea9919186692b4da35d30633&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
-            </div>
-          </div>
-        </div>
+      </div>
+      <div class="image">
+        <img src="../images/okinava/okinava2.jpg" alt="">
+      </div>
+      <div class="image">
+        <img src="../images/okinava/okinava3.jpg" alt="">
+      </div>
+    </div>
+    <div class="map-row">
+      <div class="map">
+        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A50ae687d1a7cb8efefed7f074e2cf1bf9c8dd289f38e8e388f36656cb8a4a390&amp;width=500&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
+      </div>
+    </div>
+    <div class="comment-row">
+      <div class="input_comments">
+        <form name="form">
+          <label>nickname</label>
+          <textarea id="nick" name="nick" cols="20" rows="1"></textarea><br />
+          <label>comment</label>
+          <textarea id="comment" name="comment" cols="70" rows="5"></textarea><br />
+          <input type="button" onclick="addComment()" name="send" value="Add comment" id="sendgh" />
+        </form>
+      </div>
+      <div id="comments" class="comments">
+
+      </div>
+    </div>
+  </div>
+  <script src="js/comments.js"></script>
 </body>
 
 </html>

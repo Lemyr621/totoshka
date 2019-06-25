@@ -57,12 +57,12 @@ h1 {
   border-radius: 50%;
 }
 
-.map_and_comment {
+.map-row {
   margin-left: 5%;
   margin-right: 5%;
   margin-bottom: 100px;
   width: 90%;
-  background: #CFCFCF;
+  background: #f5f5f5;
   height: 500px;
 }
 
@@ -74,25 +74,50 @@ h1 {
   width: 42%;
 }
 
-.comments {
-  background: white;
-  margin-top: 5%;
+.comment-row {
+  margin-left: 5%;
   margin-right: 5%;
-  float: right;
+  margin-bottom: 100px;
+  width: 90%;
+  background: #f5f5f5;
+  height: 550px;
+}
+
+.comments {
+  border: 5px;
+  border-color: #0080f0;
   width: 42%;
+  height: 300px;
 }
 
 .nick {
-  font-size: 20;
+   font-size: 18pt;
 }
 
 .comment {
+  height: auto;
+  width: 100%;
+  background-color: #87cefa;
+  border: 4px solid;
+  border-radius: 5%;
+  border-color: #0066cc;
+  font-size: 16pt;
   font-style: italic;
+
 }
 
 .input_comments {
-  float: right;
   padding-top: 50px;
   padding-bottom: 50px;
   width: 42%;
+}
+
+label{
+  float: left;
+  width: 100%;
+}
+
+textarea{
+  float: left;
+  width: 100%;
 }
