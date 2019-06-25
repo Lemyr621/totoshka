@@ -229,3 +229,19 @@ main {
 .authorization_link {
   margin-left: 35%
 }
+.change_method{
+  border-radius: 0px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #2483c6;
+  background: #35383e;
+  color: #2483c6;
+  font-family: corbel;
+  font-weight: 700;
+  font-size: 12pt;
+  height: 35px;
+  line-height: 32px;
+  margin-left: 335px;
+  margin-right: 10px;
+  width: 230px;
+}

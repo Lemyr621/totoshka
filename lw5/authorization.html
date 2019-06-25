@@ -11,9 +11,9 @@
     <header class="header"></header>
     <main class="content">
       <form class="registration">
-        <p class="registration__text-header">Authorization</p>
-        <p class="registration__text-email">E-mail:<input id="mail_field" class="registration__login registration__login_active" ></p>
-        <p class="registration__text-number">Телефон:<input id="number_field" class="number_field" type="number"></p>
+        <p class="registration__text-header" id="aut">Authorization</p>
+        <p id="aut_number" class="registration__text-number">Телефон:<input id="number_field" class="number_field" value="+7(___)___-____"></p>
+        <input class="change_method" type="button" onclick="changeLoginMethod()" value="Сменить способ авторизации"/>
         <div class="password-block">
           <p class="password-block__text-password-confirmation">Пароль:<input id="password_field" class="password-block__password password-block__password-repeat password-block__password_active" type="password"></p>
         </div>
@@ -24,9 +24,42 @@
       </form>
     </main>
   </div>
+
+  <script>
+  window.addEventListener("DOMContentLoaded", function() {
+  function setCursorPosition(pos, elem) {
+      elem.focus();
+      if (elem.setSelectionRange) elem.setSelectionRange(pos, pos);
+      else if (elem.createTextRange) {
+          var range = elem.createTextRange();
+          range.collapse(true);
+          range.moveEnd("character", pos);
+          range.moveStart("character", pos);
+          range.select()
+      }
+  }
+  function mask(event) {
+      var matrix = this.defaultValue,
+          i = 0,
+          def = matrix.replace(/\D/g, ""),
+          val = this.value.replace(/\D/g, "");
+          def.length >= val.length && (val = def);
+      matrix = matrix.replace(/[_\d]/g, function(a) {
+          return val.charAt(i++) || "_"
+      });
+      this.value = matrix;
+      i = matrix.lastIndexOf(val.substr(-1));
+      i < matrix.length && matrix != this.defaultValue ? i++ : i = matrix.indexOf("_");
+      setCursorPosition(i, this)
+  }
+      var input = document.getElementById("number_field");
+      input.addEventListener("input", mask, false)
+  });
+  </script>
+
 </body>
 <footer class="footer">
 </footer>
-<script src="scripts/script.js"></script>
+<script src="scripts/authorization.js"></script>
 
 </html>

@@ -1,3 +1,39 @@
+function changeLoginMethod(){
+    var bloop = document.getElementById('mail_field')
+    if (bloop === null) {
+      number_field.parentNode.removeChild(number_field);
+      aut_number.parentNode.removeChild(aut_number);
+
+      var p = document.createElement('p');
+      p.className = "registration__text-email";
+      p.id = "aut_mail";
+      p.innerHTML = "E-mail:";
+
+      var input = document.createElement('input');
+      input.className = "registration__login registration__login_active";
+      input.id = "mail_field";
+
+      p.appendChild(input);
+      aut.parentNode.insertBefore(p, aut.nextSibling);
+    }else{
+      mail_field.parentNode.removeChild(mail_field);
+      aut_mail.parentNode.removeChild(aut_mail);
+
+      var p = document.createElement('p');
+      p.className = "registration__text-number";
+      p.id = "aut_number";
+      p.innerHTML = "Телефон:";
+
+      var input = document.createElement('input');
+      input.className = "number_field";
+      input.id = "number_field";
+      input.value = "+7(___)___-____";
+
+      p.appendChild(input);
+      aut.parentNode.insertBefore(p, aut.nextSibling);
+    }
+}
+
 function checkEmail(str) {
   var result = str.match(/^[0-9-a-z-\.]+\@[0-9-a-z]{1,}\.[a-z]{2,}$/i);
   if (!result) {
@@ -64,24 +100,26 @@ function checkPassword(pass, confrim) {
   return true;
 }
 
-function checkAgreementRules() {
-  var result = document.getElementsByClassName('registration__check-confirmation')[0].checked;
-  if (result) {
-    return true;
-  } else
-    alert('Примите условия соглашения!');
-}
-
 function registration() {
-  var email = document.getElementsByClassName('registration__login')[0].value;
-  var pass = document.getElementsByClassName('password-block__password')[0].value;
-  var passConfirm = document.getElementsByClassName('password-block__password-repeat')[0].value;
-  if (checkEmail(email) && checkPassword(pass, passConfirm) && checkAgreementRules()) {
-    return true;
-  } else {
-    numberAddErrMesage();
-    mailAddErrMesage();
-    passwordAddErrMesage();
+  var bloop = document.getElementById('mail_field')
+  if (bloop === null) {
+    var email = document.getElementsByClassName('registration__login')[0].value;
+    var passConfirm = document.getElementsByClassName('password-block__password-repeat')[0].value;
+    if (checkEmail(email) && checkPassword(pass, passConfirm)) {
+      return true;
+    } else {
+      mailAddErrMesage();
+      passwordAddErrMesage();
+    }
+  }else{
+    var phone = document.getElementsByClassName('number_field')[0].value;
+    var passConfirm = document.getElementsByClassName('password-block__password-repeat')[0].value;
+    if (checkNumber(phone) && checkPassword(pass, passConfirm)) {
+      return true;
+    } else {
+      numberAddErrMesage();
+      passwordAddErrMesage();
+    }
   }
   return false;
 }
