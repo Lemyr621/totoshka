@@ -70,6 +70,7 @@ number_field.onblur = function() {
   }
 }
 number_field.onfocus = function() {
+  alert("sasi");
   document.getElementsByClassName('number_field')[0].style.backgroundColor = '#484d56';
   number_field.parentNode.removeChild(number_alert_id);
 }
@@ -90,11 +91,8 @@ password_field.onfocus = function() {
   password_field.parentNode.removeChild(password_alert_id);
 }
 
-function checkPassword(pass, confrim) {
+function checkPassword(pass) {
   if (pass.length < 6) {
-    return false;
-  }
-  if (pass != confrim) {
     return false;
   }
   return true;
@@ -103,30 +101,29 @@ function checkPassword(pass, confrim) {
 function registration() {
   var bloop = document.getElementById('mail_field')
   if (bloop === null) {
-    var email = document.getElementsByClassName('registration__login')[0].value;
-    var passConfirm = document.getElementsByClassName('password-block__password-repeat')[0].value;
-    if (checkEmail(email) && checkPassword(pass, passConfirm)) {
-      return true;
-    } else {
-      mailAddErrMesage();
-      passwordAddErrMesage();
-    }
-  }else{
     var phone = document.getElementsByClassName('number_field')[0].value;
     var passConfirm = document.getElementsByClassName('password-block__password-repeat')[0].value;
-    if (checkNumber(phone) && checkPassword(pass, passConfirm)) {
+    if (checkNumber(phone) && checkPassword(passConfirm)) {
+      alert("Вошли через телефон");
       return true;
     } else {
       numberAddErrMesage();
       passwordAddErrMesage();
     }
+  }else{
+    var email = document.getElementsByClassName('registration__login')[0].value;
+    var passConfirm = document.getElementsByClassName('password-block__password-repeat')[0].value;
+    if (checkEmail(email) && checkPassword(passConfirm)) {
+      alert("Вошли через Маил");
+      return true;
+    } else {
+      mailAddErrMesage();
+      passwordAddErrMesage();
+    }
+
   }
   return false;
 }
-
-document.getElementsByClassName('registration')[0].onsubmit = function() {
-  return registration();
-};
 
 function mailAddErrMesage() {
   var bloop = document.getElementById('mail_alert_id')

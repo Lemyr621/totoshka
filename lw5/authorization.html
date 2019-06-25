@@ -17,7 +17,7 @@
         <div class="password-block">
           <p class="password-block__text-password-confirmation">Пароль:<input id="password_field" class="password-block__password password-block__password-repeat password-block__password_active" type="password"></p>
         </div>
-        <p><input class="registration__button registration__button_active" type="submit" value="Войти"></p>
+        <p><input class="change_method" type="button" onclick="registration()" value="Войти"/></p>
         <div class="authorization_link">
           <a href="index.html">На регистрацию</a>
         </div>
@@ -40,7 +40,7 @@
   }
   function mask(event) {
       var matrix = this.defaultValue,
-          i = 0,
+        i = 0,
           def = matrix.replace(/\D/g, ""),
           val = this.value.replace(/\D/g, "");
           def.length >= val.length && (val = def);
